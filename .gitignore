@@ -57,3 +57,5 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# use this command if having issues pushing to branch 'git filter-branch -f --index-filter 'git rm --cached -r --ignore-unmatch .terraform/' ' 
