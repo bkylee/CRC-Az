@@ -1,12 +1,12 @@
 const Header = () => {
   return (
     <header>
-      <div className="subsection">Home</div>
-      <div className="subsection">Blog</div>
-      <div className="subsection">Resume</div>
-      <div className="subsection">Projects</div>
-      <div className="subsection">About</div>
-      <div className="subsction">Videos</div>
+      <button className="subsection">Home</button>
+      <button className="subsection">Blog</button>
+      <button className="subsection">Resume</button>
+      <button className="subsection">Projects</button>
+      <button className="subsection">About</button>
+      <button className="subsction">Videos</button>
     </header>
   )
 }
