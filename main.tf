@@ -42,11 +42,24 @@ resource "azurerm_network_interface" "terraform_test_nic" {
 
 #storage account 
 resource "azurerm_storage_account" "terraform_test_SA" {
-  name                     = "storageaccountforte"
+  name                     = "saforbkyl"
   location                 = azurerm_resource_group.rg.location
   resource_group_name      = azurerm_resource_group.rg.name
   account_tier             = "Standard"
   account_replication_type = "LRS"
+
+  static_website {
+    index_document = "index.html"
+  }
+}
+
+resource "azurerm_storage_blob" "terraform_blob" {
+  name = "index.html"
+  storage_account_name = azurerm_storage_account.terraform_test_SA.name
+  storage_container_name = "$web"
+  type = "Block"
+  content_type = "text/html"
+  source = "index.html"
 }
 
 #VM
@@ -55,23 +68,47 @@ resource "azurerm_linux_virtual_machine" "terraform_test_VM" {
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.terraform_test_nic.id]
-  size               = "Standard_B1s"
-  admin_username = "testadmin"
-  
+  size                  = "Standard_B1s"
+  admin_username        = "testadmin"
+
   os_disk {
-    caching           = "ReadWrite"
+    caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
   }
-  
-   admin_ssh_key {
+
+  admin_ssh_key {
     username   = "testadmin"
     public_key = file("~/.ssh/id_rsa.pub")
   }
 
- source_image_reference {
+  source_image_reference {
     publisher = "Canonical"
     offer     = "0001-com-ubuntu-server-jammy"
     sku       = "22_04-lts"
     version   = "latest"
   }
+}
+
+resource "azurerm_cdn_profile" "terraform_CDNprofile" {
+  name                = "testCDNProfile"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  sku                 = "Standard_Microsoft"
+}
+
+resource "azurerm_cdn_endpoint" "terraform_CDNendpoint" {
+  name                = "leekiendpoint"
+  profile_name        = azurerm_cdn_profile.terraform_CDNprofile.name
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+
+  origin {
+    name      = "endpointName"
+    host_name = "www.kiyoonhasacoolwebsite.com"
+  }
+}
+
+resource "azurerm_dns_zone" "terraform_dnsZone" {
+  name = "bkylee.ca"
+  resource_group_name = azurerm_resource_group.rg.name
 }
