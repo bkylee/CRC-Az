@@ -3,6 +3,8 @@ resource "azurerm_resource_group" "rg" {
   name     = "terraform_test_rg"
 }
 
+data "azurerm_client_config" "current" {}
+
 #virtual network 
 resource "azurerm_virtual_network" "terraform_test_network" {
   name                = "terraform-vnet"
@@ -19,15 +21,15 @@ resource "azurerm_subnet" "terraform_test_subnet" {
   resource_group_name  = azurerm_resource_group.rg.name
 }
 
-resource "azurerm_public_ip" "terraform_test_publicIP" {
+/* resource "azurerm_public_ip" "terraform_test_publicIP" {
   name                = "terraform-publicIP"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Dynamic"
-}
+} */
 
 #nic
-resource "azurerm_network_interface" "terraform_test_nic" {
+/* resource "azurerm_network_interface" "terraform_test_nic" {
   name                = "terraform-nic"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
@@ -38,7 +40,7 @@ resource "azurerm_network_interface" "terraform_test_nic" {
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.terraform_test_publicIP.id
   }
-}
+} */
 
 #storage account 
 resource "azurerm_storage_account" "terraform_test_SA" {
@@ -54,16 +56,16 @@ resource "azurerm_storage_account" "terraform_test_SA" {
 }
 
 resource "azurerm_storage_blob" "terraform_blob" {
-  name = "index.html"
-  storage_account_name = azurerm_storage_account.terraform_test_SA.name
+  name                   = "index.html"
+  storage_account_name   = azurerm_storage_account.terraform_test_SA.name
   storage_container_name = "$web"
-  type = "Block"
-  content_type = "text/html"
-  source = "index.html"
+  type                   = "Block"
+  content_type           = "text/html"
+  source                 = "index.html"
 }
 
 #VM
-resource "azurerm_linux_virtual_machine" "terraform_test_VM" {
+/* resource "azurerm_linux_virtual_machine" "terraform_test_VM" {
   name                  = "terraform-vm"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
@@ -87,7 +89,7 @@ resource "azurerm_linux_virtual_machine" "terraform_test_VM" {
     sku       = "22_04-lts"
     version   = "latest"
   }
-}
+} */
 
 resource "azurerm_cdn_profile" "terraform_CDNprofile" {
   name                = "testCDNProfile"
@@ -109,6 +111,43 @@ resource "azurerm_cdn_endpoint" "terraform_CDNendpoint" {
 }
 
 resource "azurerm_dns_zone" "terraform_dnsZone" {
-  name = "bkylee.ca"
+  name                = "kiyoonhasacoolwebsite.com"
   resource_group_name = azurerm_resource_group.rg.name
+}
+
+resource "azurerm_key_vault" "terraform_keyvault" {
+  name                        = random_string.keyvault_name.id
+  location                    = azurerm_resource_group.rg.location
+  resource_group_name         = azurerm_resource_group.rg.name
+  enabled_for_disk_encryption = true
+  tenant_id                   = data.azurerm_client_config.current.tenant_id
+  soft_delete_retention_days  = 7
+  purge_protection_enabled    = false
+
+  sku_name = "standard"
+
+  access_policy {
+    tenant_id = data.azurerm_client_config.current.tenant_id
+    object_id = data.azurerm_client_config.current.object_id
+
+    key_permissions = [
+      "Get",
+    ]
+
+    secret_permissions = [
+      "Get",
+    ]
+
+    storage_permissions = [
+      "Get",
+    ]
+  }
+}
+
+resource "random_string" "keyvault_name" {
+  length = 10
+  lower = true
+  numeric = false
+  special = false
+  upper = false 
 }
