@@ -1,9 +1,9 @@
 const Header = () => {
   return (
     <header>
-      <h1>Brian's Cool Website</h1>
+      <h1>Brian&apos;s Cool Website</h1>
       <div className="headButtons">
-        <button className="subsection">Home</button>
+        <a>Home</a>
         <button className="subsection">Blog</button>
         <button className="subsection">Resume</button>
         <button className="subsection">Projects</button>

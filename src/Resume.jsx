@@ -1,21 +1,20 @@
 function Resume() {
 
-    function Jobs() {
-        const jobs = ["Jr IT Administrator, Spirit of Math Schools Inc.", "End User Support Specialist, Unity Health Toronto"];
-        const jobDesc = ["Use Entra to administrate user accounts, roles, privileges, licenses. Deploy and configure devices using MDM through Microsoft Intune. Create reports using PowerBI. Automate workflows using Power Automate. Research and develop solutions for different departments. Create documentation for procedures and policies. Create and maintain asset list.", "Use SCCM to troubleshoot and deploy apps to users. Image and deplioy hardware to staff. Manage and distribute tickets through ServiceNow. Remotely troubleshoot user issues using RDP."];
-        const jobsList = jobs.map((job) => <li key={ job }>{ job } </li>)
-        const jobsDescList = jobDesc.map((jobDesc) => <p key={ jobDesc }> { jobDesc } </p>)
+    // function Jobs() {
+    //     const jobs = ["Jr IT Administrator, Spirit of Math Schools Inc.", "End User Support Specialist, Unity Health Toronto"];
+    //     const jobDesc = ["Use Entra to administrate user accounts, roles, privileges, licenses. Deploy and configure devices using MDM through Microsoft Intune. Create reports using PowerBI. Automate workflows using Power Automate. Research and develop solutions for different departments. Create documentation for procedures and policies. Create and maintain asset list.", "Use SCCM to troubleshoot and deploy apps to users. Image and deplioy hardware to staff. Manage and distribute tickets through ServiceNow. Remotely troubleshoot user issues using RDP."];
+    //     const jobsList = jobs.map((job) => <li key={ job }>{ job } </li>)
+    //     const jobsDescList = jobDesc.map((jobDesc) => <p key={ jobDesc }> { jobDesc } </p>)
 
-        return (
-            <ul>
-                {jobsList}
-                {jobsDescList}
-            </ul>
-        );
-    }
+    //     return (
+    //         <ul>
+    //             {jobsList}
+    //             {jobsDescList}
+    //         </ul>
+    //     );
+    // }
     return <>
         <h2>Ki Yoon (Brian) Lee</h2>
-        <Jobs />
         <div id="email">brian.ky.lee@outlook.com</div>
         <ul className="socials">
             <li>LinkedIn: https://www.linkedin.com/in/kiyoon-brian-lee</li>
