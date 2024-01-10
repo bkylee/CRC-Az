@@ -98,17 +98,17 @@ resource "azurerm_cdn_profile" "terraform_CDNprofile" {
   sku                 = "Standard_Microsoft"
 }
 
-resource "azurerm_cdn_endpoint" "terraform_CDNendpoint" {
-  name                = "leekiendpoint"
-  profile_name        = azurerm_cdn_profile.terraform_CDNprofile.name
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+# resource "azurerm_cdn_endpoint" "terraform_CDNendpoint" {
+#   name                = "leekiendpoint"
+#   profile_name        = azurerm_cdn_profile.terraform_CDNprofile.name
+#   location            = azurerm_resource_group.rg.location
+#   resource_group_name = azurerm_resource_group.rg.name
 
-  origin {
-    name      = "endpointName"
-    host_name = "www.kiyoonhasacoolwebsite.com"
-  }
-}
+#   origin {
+#     name      = "endpointName"
+#     host_name = "the origin hostname for the static website"
+#   }
+# }
 
 resource "azurerm_dns_zone" "terraform_dnsZone" {
   name                = "kiyoonhasacoolwebsite.com"
