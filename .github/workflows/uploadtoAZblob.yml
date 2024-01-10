@@ -17,7 +17,7 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az storage blob upload-batch --account-name <saforbkylee> --auth-mode key -d '$web' -s .
+            az storage blob upload-batch --account-name <saforbkyl> --auth-mode key -d '$web' -s .
       - name: Purge CDN endpoint
         uses: azure/CLI@v1
         with:
@@ -29,3 +29,4 @@ jobs:
         run: |
           az logout
         if: always()
+# https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions?tabs=userlevel
