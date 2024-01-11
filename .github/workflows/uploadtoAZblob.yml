@@ -1,21 +1,41 @@
-name: Blob storage website CI
+name: Deploy React App to Azure Storage
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - "*"
+defaults:
+  run:
+    working-directory: ./
+env:
+  NODE_VERSION: "17" # set this to the node version to use
+  CI: false
 jobs:
-  upload:
+  build-and-deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: bkylee/CRC-Az@main
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v1
         with:
-          source_dir: "public"
-          container_name: $web
+          node-version: ${{ env.NODE_VERSION }}
+      - name: npm install & build
+        run: |
+          # Build and test the project, then
+          # deploy to Azure Web App.
+          npm install
+          npm run build
+      - name: "Deploy react app to Azure blob storage"
+        uses: bacongobbler/azure-blob-storage-upload@main
+        with:
+          source_dir: "./build"
+          container_name: "$web"
           connection_string: ${{ secrets.SAFORBKYLEE_CONNECTION_STRING }}
-          extra_args: "--pattern *.tar.gz"
-          # WARNING: this will overwrite existing blobs in your blob storage
+          sync: "true"
           overwrite: "true"
 # on:
 #   push:
