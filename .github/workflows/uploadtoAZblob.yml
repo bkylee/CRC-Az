@@ -36,7 +36,6 @@ jobs:
           container_name: "$web"
           connection_string: ${{ secrets.SAFORBKYLEE_CONNECTION_STRING }}
           sync: "true"
-          overwrite: "true"
 # on:
 #   push:
 #     branches: [main]
