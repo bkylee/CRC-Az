@@ -13,7 +13,6 @@ jobs:
           source_dir: ./
           container_name: $web
           connection_string: ${{ secrets.SAFORBKYLEE_CONNECTION_STRING }}
-          extra_args: "--pattern *.tar.gz"
           # WARNING: this will overwrite existing blobs in your blob storage
           overwrite: "true"
           sync: "true"
