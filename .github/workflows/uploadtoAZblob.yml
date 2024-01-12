@@ -1,18 +1,30 @@
-name: Upload To Azure Blob Storage
+name: Deploy website
+
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
+
 jobs:
-  upload:
+  build-and-deploy:
+    name: Build and deploy
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: bacongobbler/azure-blob-storage-upload@main
+      - uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          source_dir: ./
-          container_name: $web
-          connection_string: ${{ secrets.SAFORBKYLEE_CONNECTION_STRING }}
-          # WARNING: this will overwrite existing blobs in your blob storage
-          overwrite: "true"
-          sync: "true"
+          node-version: 18
+
+      - name: Build website
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy to Azure
+        uses: TravisSpomer/deploy-to-azure-storage@v1.5.0
+        with:
+          source-path: build
+          sas-url: ${{ secrets.SAFORBKYLEE_CONNECTION_STRING }}
