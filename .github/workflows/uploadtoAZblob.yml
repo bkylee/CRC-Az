@@ -16,7 +16,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: latest
 
       - name: Build website
         run: |
@@ -26,7 +26,8 @@ jobs:
       - name: Deploy to Azure
         uses: bacongobbler/azure-blob-storage-upload@main
         with:
-          source_dir: "./dist"
+          source_dir: "./dist" #for final build
           container_name: "$web"
           connection_string: ${{ secrets.SAFORBKYLEE_CONNECTION_STRING }}
           sync: "true"
+# https://blog.medhat.ca/2022/03/deploy-reactjs-app-to-azure-blob.html

@@ -1,3 +1,5 @@
+import Visitors from "./Visitors"
+
 const Header = () => {
   return (
     <header>
@@ -9,6 +11,7 @@ const Header = () => {
         <button className="subsection">Projects</button>
         <button className="subsection">About</button>
         <button className="subsction">Videos</button>
+        <Visitors />
       </div>
     </header>
   )

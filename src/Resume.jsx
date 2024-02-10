@@ -1,3 +1,5 @@
+import VisitorCount from "./assets/VisitorCount";
+
 function Resume() {
 
     // function Jobs() {
@@ -14,6 +16,7 @@ function Resume() {
     //     );
     // }
     return <>
+        <VisitorCount />
         <h2>Ki Yoon (Brian) Lee</h2>
         <div id="email">brian.ky.lee@outlook.com</div>
         <ul className="socials">
