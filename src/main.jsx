@@ -1,17 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import Resume from './ResumePage.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Home from './Home.jsx'
+import ResumePage from './ResumePage.jsx'
 
 const router = createBrowserRouter([
-  // {
-  //   path: "/",
-  //   element: <Home />
-  // },
+  {
+    path: "/resume",
+    element: <ResumePage />
+  },
   {
     path: "/",
-    element: <Resume />
+    element: <Home />
   }
 ])
 
