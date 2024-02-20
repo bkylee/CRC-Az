@@ -1,16 +1,16 @@
 import { useNavigate } from "react-router-dom"
-import Visitors from "./Visitors"
+import Visitors from "./components/Visitors"
 
 
 const Header = () =>
 {
-
   let navigate = useNavigate();
-
-const homeRoute = () => {
+  
+  const homeRoute = () => {
   let path = `/`
   navigate(path)
-}
+  }
+  
   const resumeRoute = () => {
     let path = `/resume`
     navigate(path)
@@ -19,6 +19,10 @@ const homeRoute = () => {
   return (
     <header>
       <h1>Brian&apos;s Cool Website</h1>
+      <div className="socials">
+        <a href="https://github.com/bkylee"></a>
+        <a href="https://www.linkedin.com/in/kiyoon-brian-lee/"></a>
+      </div>
       <div className="headButtons">
         <button className="subsection" onClick={homeRoute} >Home</button>
         <button className="subsection" >Blog</button>

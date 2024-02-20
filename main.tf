@@ -29,7 +29,7 @@ resource "azurerm_subnet" "terraform_test_subnet" {
 } */
 
 #nic
-/* resource "azurerm_network_interface" "terraform_test_nic" {
+resource "azurerm_network_interface" "terraform_test_nic" {
   name                = "terraform-nic"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
@@ -37,10 +37,9 @@ resource "azurerm_subnet" "terraform_test_subnet" {
   ip_configuration {
     name                          = "test_nic_config"
     subnet_id                     = azurerm_subnet.terraform_test_subnet.id
-    private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.terraform_test_publicIP.id
+    private_ip_address_allocation = "Static"
   }
-} */
+} 
 
 #storage account 
 resource "azurerm_storage_account" "terraform_test_SA" {
@@ -65,8 +64,8 @@ resource "azurerm_storage_blob" "terraform_blob" {
 }
 
 #VM
-/* resource "azurerm_linux_virtual_machine" "terraform_test_VM" {
-  name                  = "terraform-vm"
+resource "azurerm_linux_virtual_machine" "terraform_test_VM" {
+  name                  = "DB-postgreSQL"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.terraform_test_nic.id]
@@ -89,7 +88,7 @@ resource "azurerm_storage_blob" "terraform_blob" {
     sku       = "22_04-lts"
     version   = "latest"
   }
-} */
+} 
 
 resource "azurerm_cdn_profile" "terraform_CDNprofile" {
   name                = "testCDNProfile"
