@@ -8,7 +8,7 @@ function MyCurrentlyPlayingComponent() {
 
   useEffect(() => {
     // Set the access token here
-    spotifyApi.setAccessToken('d5b2c9a12d5f4ddc944ee3b386fb8bb4');
+    spotifyApi.setAccessToken('');
     getNowPlaying();
   }, []);
 
