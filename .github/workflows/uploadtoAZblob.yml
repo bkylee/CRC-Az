@@ -27,7 +27,7 @@ jobs:
       - name: Deploy to Azure
         uses: bacongobbler/azure-blob-storage-upload@main
         with:
-          source_dir: "_dist" #for final build
+          source_dir: "client/dist" #for final build
           container_name: "$web"
           connection_string: ${{ secrets.SAFORBKYLEE_CONNECTION_STRING }}
           sync: "true"
