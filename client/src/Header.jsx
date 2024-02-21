@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom"
 import Visitors from "./components/Visitors"
-import MyCurrentlyPlayingComponent from "./components/spotifyAPI/MyCurrentlyPlayingComponent";
 
 
 const Header = () =>
