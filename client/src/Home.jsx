@@ -8,6 +8,8 @@ const Home = () => {
         <p>
           {homeText}  
       </p>
+      <p>This site uses React in the front end, Azure Static Website for hosting, Terraform for IaC, GitHub Actions for CI/CD, Python for the visitor count hosted by Azure Functions.</p>
+      <p>Vist my Github for the repos!</p>
     </>
       
   )

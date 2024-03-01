@@ -32,7 +32,6 @@ const Header = () =>
         <button className="subsction">Videos</button>
       </div>
       <Visitors />
-      <MyCurrentlyPlayingComponent />
     </header>
   )
 }
