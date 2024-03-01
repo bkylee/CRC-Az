@@ -29,7 +29,7 @@ const Header = () =>
         <button className="subsection" onClick={resumeRoute}>Resume</button>
         <button className="subsection">Projects</button>
         <button className="subsection">About</button>
-        <button className="subsction">Videos</button>
+        <button className="subsection">Videos</button>
       </div>
       <Visitors />
     </header>
