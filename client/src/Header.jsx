@@ -18,7 +18,7 @@ const Header = () =>
 
   return (
     <header>
-      <h1>Ki Yoon&apos;s Cool Website</h1>
+      <h1>Ki Yoon&apos;s Kool Website</h1>
       <div className="socials">
         <a href="https://github.com/bkylee"></a>
         <a href="https://www.linkedin.com/in/kiyoon-brian-lee/"></a>
