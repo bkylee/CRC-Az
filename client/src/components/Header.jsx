@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import Visitors from "./components/Visitors"
+import Visitors from "./Visitors"
 
 
 const Header = () =>
@@ -16,6 +16,11 @@ const Header = () =>
     navigate(path)
   }
 
+  const blogRoute = () => {
+    let path = `/blog`
+    navigate(path)
+  }
+
   return (
     <header>
       <h1>Ki Yoon&apos;s Kool Website</h1>
@@ -25,7 +30,7 @@ const Header = () =>
       </div>
       <div className="headButtons">
         <button className="subsection" onClick={homeRoute} >Home</button>
-        <button className="subsection" >Blog</button>
+        <button className="subsection" onClick = {blogRoute}>Blog</button>
         <button className="subsection" onClick={resumeRoute}>Resume</button>
         <button className="subsection">Projects</button>
         <button className="subsection">About</button>

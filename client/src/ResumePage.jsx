@@ -1,4 +1,4 @@
-import Header from './Header.jsx'
+import Header from './components/Header.jsx'
 import Resume from './components/Resume.jsx'
 //import Footer from './Footer.jsx'
 
