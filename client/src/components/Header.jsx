@@ -30,9 +30,9 @@ const Header = () =>
       </div>
       <div className="headButtons">
         <button className="subsection" onClick={homeRoute} >Home</button>
-        <button className="subsection" onClick = {blogRoute}>Blog</button>
+        <button className="subsection" onClick={blogRoute}>Blog</button>
         <button className="subsection" onClick={resumeRoute}>Resume</button>
-        <button className="subsection">Projects</button>
+        <button className="subsection" onClick={() => window.open("https://github.com/bkylee?tab=repositories", '_blank')}>GitHub repos</button>
         <button className="subsection">About</button>
         <button className="subsection">Videos</button>
       </div>
