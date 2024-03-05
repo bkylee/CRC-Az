@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import Visitors from "./Visitors"
+import Uniques from "./Visitors";
 
 
 const Header = () =>
@@ -37,6 +38,7 @@ const Header = () =>
         <button className="subsection">Videos</button>
       </div>
       <Visitors />
+      <Uniques />
     </header>
   )
 }

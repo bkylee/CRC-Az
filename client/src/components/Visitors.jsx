@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react"
 
-const Visitors = () =>{
+const Uniques = () =>{
   const [count, setCount] = useState(null);
 
   useEffect(() => {
@@ -23,4 +23,4 @@ const Visitors = () =>{
   );
 };
 
-export default Visitors
+export default Uniques
