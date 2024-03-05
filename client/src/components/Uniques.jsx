@@ -5,7 +5,7 @@ const Visitors = () =>{
   const [count, setCount] = useState(null);
 
   useEffect(() => {
-    fetch('https://g895njd.azurewebsites.net/api/visitorcount', {
+    fetch('https://oij4nv0.azurewebsites.net/api/uniqueCount', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ const Visitors = () =>{
 
   return (
     <div>
-      {count !== null ? `Page load count: ${count}` : 'Loading...'}
+      {count !== null ? `Unique visitor count: ${count}` : 'Loading...'}
     </div>
   );
 };

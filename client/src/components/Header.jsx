@@ -25,8 +25,8 @@ const Header = () =>
     <header>
       <h1>Ki Yoon&apos;s Kool Website</h1>
       <div className="socials">
-        <a href="https://github.com/bkylee"></a>
-        <a href="https://www.linkedin.com/in/kiyoon-brian-lee/"></a>
+        <a href="https://github.com/bkylee">Github</a>
+        <a href="https://www.linkedin.com/in/kiyoon-brian-lee/">LinkedIn</a>
       </div>
       <div className="headButtons">
         <button className="subsection" onClick={homeRoute} >Home</button>
