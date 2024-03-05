@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import Visitors from "./Visitors"
-import Uniques from "./Visitors";
+import Uniques from "./Uniques";
 
 
 const Header = () =>
