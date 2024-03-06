@@ -66,3 +66,20 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.posts {
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  border-color: white;
+  border: 3px solid;
+}
+
+.posts:hover {
+  border-color: #646cff;
+  transition: border-color 0.25s;
+}
+
+.posts:focus,
+.posts:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

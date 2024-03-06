@@ -13,8 +13,8 @@ const Blog = () => {
   return (
       <>
           <Header />
-          <div className="posts">
-              <h3 className="blog" onClick={firstPostRoute}>
+          <div className="blog">
+              <h3 className="posts" onClick={firstPostRoute}>
                   First Post!
               </h3>
             </div>
