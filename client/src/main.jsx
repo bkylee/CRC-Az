@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { Router, RouterProvider } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './Home.jsx'
 import ResumePage from './ResumePage.jsx'
 import Blog from './Blog.jsx'
+import { FirstPost } from './blogPosts/FirstPost.jsx'
 
-const router = Router([
+const router = createBrowserRouter([
   {
     path: "/resume",
     element: <ResumePage />
@@ -20,7 +21,8 @@ const router = Router([
     element: <Blog />
   },
   {
-    path:"/blog/firstPost"
+    path: "/blog/first-post",
+    element: <FirstPost />
   }
 ])
 

@@ -5,7 +5,7 @@ const Blog = () => {
     let navigate = useNavigate();
   
   const firstPostRoute = () => {
-  let path = `blog/first-post`
+  let path = `/blog/first-post`
   navigate(path)
   }
   
