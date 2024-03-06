@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
-import Visitors from "./Visitors"
-import Uniques from "./Uniques";
+import Visitors from "./components/Visitors"
+import Uniques from "./components/Uniques";
 
 
 const Header = () =>
@@ -22,6 +22,11 @@ const Header = () =>
     navigate(path)
   }
 
+  const aboutRoute = () => {
+    let path = `/about`
+    navigate(path)
+  }
+
   return (
     <header>
       <h1>Ki Yoon&apos;s Kool Website</h1>
@@ -35,7 +40,7 @@ const Header = () =>
         <button className="subsection" onClick={blogRoute}>Blog</button>
         <button className="subsection" onClick={resumeRoute}>Resume</button>
         <button className="subsection" onClick={() => window.open("https://github.com/bkylee?tab=repositories", '_blank')}>GitHub repos</button>
-        <button className="subsection">About</button>
+        <button className="subsection" onClick={aboutRoute}>About</button>
         <button className="subsection">Videos</button>
       </div>
     </header>
