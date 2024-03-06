@@ -25,8 +25,9 @@ const Header = () =>
   return (
     <header>
       <h1>Ki Yoon&apos;s Kool Website</h1>
+      <Visitors />
+      <Uniques />
       <div className="socials">
-        <a href="https://github.com/bkylee">Github</a>
         <a href="https://www.linkedin.com/in/kiyoon-brian-lee/">LinkedIn</a>
       </div>
       <div className="headButtons">
@@ -37,8 +38,6 @@ const Header = () =>
         <button className="subsection">About</button>
         <button className="subsection">Videos</button>
       </div>
-      <Visitors />
-      <Uniques />
     </header>
   )
 }
