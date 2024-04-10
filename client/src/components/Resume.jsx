@@ -11,22 +11,31 @@ function Resume() {
     const mostRecentJob =
         <li className="jobInfo">
             <h4 className="jobTitleComp">Jr IT Administrator, Spirit of Math Schools Inc.</h4>
-            <p className="dateRange">January 2023 - Present</p>
-            <p className="desc">Work with senior network and security administrator to administrate O365,
-                Windows 10 devices, and online services. Research and develop new solutions. Onboard, offboard,
-                nd manage user accounts for over 200 employees using Azure Active Directory and Intune. Create
-                SOP and other documentation for IT procedures. Tier 2 support for campus and HQ staff.
-            </p>
+            <p className="dateRange">January 2023 - April 2024</p>
+            <ul className="desc">
+                <li>Manage Azure Entra accounts, exchange mailbox, licensing, and role access for over 200 staff.</li>
+                <li>Manage deployment of 100+ devices using Intune.</li>
+                <li>Define requirements and research cost-effective IT solutions for IT team and cross-functional teams</li>
+                <li>Create asset management solution using Power Apps and SharePoint Lists.</li>
+                <li>Create KPI tracking solution using SharePoint, Dynamics, and PowerBI.</li>
+                <li>Create 20+ reports using PowerBI for business analytics.</li>
+                <li>Train staff on new IT hardware and software solutions.</li>
+                <li>Created 50+ documentation, diagrams, visuals for IT staff and end users.</li>
+                <li>Monitor logs and alerts from Microsoft Defender and other SaaS products</li>
+            </ul>
         </li>;
     const previousJob =
         <li className="jobInfo">
             <h4 className="jobTitleComp">End User Support Specialist, Unity Health Toronto</h4>
             <p className="dateRange">June 2020 - June 2022</p>
-            <p className="desc">Troubleshoot hardware and software issues for 10,000+ employees remotely
-                and onsite. Mange ticketing system using ServiceNow. Reimage and upgrade hardware to Windows 10.
-                Coordinate with project managers for deploying hardware and software. Document software installation
-                and troubleshooting methods.
-            </p>
+             <ul className="desc">
+                <li>Lead Windows 10 migration project in St. Michael’s Hospital</li>
+                <li>Gathering software and hardware requirements from department heads.</li>
+                <li>Upgraded/replaced over 300 Windows 7 devices to Windows 10.</li>
+                <li>Troubleshoot hardware and software issues for over 10,000 staff across Toronto</li>
+                <li>Manage ticket distribution using ServiceNOW</li>
+                <li>Manage software deployment using SCCM</li>
+            </ul>
         </li>;
 
 

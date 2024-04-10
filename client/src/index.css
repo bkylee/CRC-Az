@@ -13,6 +13,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.jobTitleComp {
+  margin-top: 0em;
+  margin-bottom: 0.5vw;
+}
+
+.dateRange {
+  margin-top: 0px;
+  margin-bottom: 0.5em;
+}
+
+.desc {
+  margin-bottom: 1em;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
