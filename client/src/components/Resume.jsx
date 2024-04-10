@@ -2,10 +2,10 @@
 function Resume() {
 
     const bio = <p>Skilled IT professional with over three years
-        of experience in IT Support and administration. Knowledge in both AWS and Azure. I have a BA in Information Technology
+        of experience in IT Support and administration. I have a BA in Information Technology
         from York University and an Azure Administrator Associate certification.
         I have pursued learning web development via The Odin Project, and am always looking to learn new skills in the IT field.
-        Currently, am working on completing the Cloud Resume Challenge to boost my Azure skills.
+        Welcome to my Cloud Resume Challenge website. I&apos;ve created this site using React, Azure Blob Static Website, Terraform, and Github Actions. The Unique Vistior count API was created using Python and Azure ComsoDB.
     </p>;
 
     const mostRecentJob =
